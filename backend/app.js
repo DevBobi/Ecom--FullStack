@@ -6,9 +6,11 @@ const errorMiddleware = require("./middleware/error");
 app.use(express.json())
 
 // Route Import
+const user = require("./routes/userRoute");
 const product = require("./routes/productRoute");
 
-app.use("/api/v1", product)
+app.use("/api/v1", product);
+app.use("/api/v1", user);
 
 // Middleware for Errors
 app.use(errorMiddleware);
