@@ -7,7 +7,7 @@ const connectDatabase = () => {
     })
     // .catch((err) => {
     //     console.log(err)   /* Don't need this anymore bc we handled Unhandled Promise Rejection Error on server */
-    // })
+    //  })
 
 }
 
