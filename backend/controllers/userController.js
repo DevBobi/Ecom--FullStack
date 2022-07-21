@@ -25,27 +25,27 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 // Login User
 exports.loginUser = catchAsyncErrors(async (req, res, next) => {
     const { email, password } = req.body;
-  
+
     // checking if user has given password and email both
-  
+
     if (!email || !password) {
-      return next(new ErrorHandler("Please Enter Email & Password", 400));
+        return next(new ErrorHandler("Please Enter Email & Password", 400));
     }
-  
+
     const user = await User.findOne({ email }).select("+password");
-  
+
     if (!user) {
-      return next(new ErrorHandler("Invalid email or password", 401));
+        return next(new ErrorHandler("Invalid email or password", 401));
     }
-  
+
     const isPasswordMatched = await user.comparePassword(password);
-  
+
     if (!isPasswordMatched) {
-      return next(new ErrorHandler("Invalid email or password", 401));
+        return next(new ErrorHandler("Invalid email or password", 401));
     }
-  
+
     sendToken(user, 200, res);
-  });
+});
 
 // Logout User
 
@@ -143,11 +143,33 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
 
 // Get User Details
 
-exports.getUserDetails = catchAsyncErrors(async(req, res, next) =>{
+exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {
     const user = await User.findById(req.user.id);
 
     res.status(200).json({
-        success:true,
+        success: true,
         user
     });
+});
+
+// Get User Password
+
+exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
+    const user = await User.findById(req.user.id).select("+password");
+
+    const isPasswordMatched = await user.comparePassword(req.body.oldPassword);
+
+    if (!isPasswordMatched) {
+        return next(new ErrorHandler("Old password is incorrect!", 400));
+    }
+
+    if (req.body.newPassword !== req.body.confirmPassword) {
+        return next(new ErrorHandler("Password does not matched!", 400));
+    }
+
+    user.password = req.body.newPassword
+
+    await user.save();
+
+    sendToken(user, 200, res)
 });

@@ -18,13 +18,13 @@ if(err.code === 11000){
 
     // Wrong JWT Error
     if(err.name === "JsonWebTokenError"){
-        const message = `Json web token is invalid, try again`
+        const message = "Json web token is invalid, try again"
         err = new ErrorHandler(message, 400)
     }
 
       // JWT Expire Error
       if(err.name === "TokenExpiredError"){
-        const message = `Json web token is Expired, try again`
+        const message = "Json web token is Expired, try again"
         err = new ErrorHandler(message, 400)
     }
 
