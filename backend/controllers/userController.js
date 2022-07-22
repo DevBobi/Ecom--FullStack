@@ -4,6 +4,7 @@ const User = require("../models/userModel");
 const sendToken = require("../utils/jwtToken");
 const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto");
+const { options } = require("../routes/userRoute");
 
 // Register a user
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
@@ -152,7 +153,7 @@ exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {
     });
 });
 
-// Get User Password
+// Update User Password
 
 exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
     const user = await User.findById(req.user.id).select("+password");
@@ -173,3 +174,52 @@ exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
 
     sendToken(user, 200, res)
 });
+
+// Update User Profile
+
+exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
+
+    const newUserData = {
+        name: req.body.name,
+        email: req.body.email,
+    };
+
+    // we will add clodunary later
+
+    const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
+        new: true,
+        runValidators: true,
+        useFindAndModify: false
+    })
+
+    res.status(200).json({
+        success: true
+    })
+});
+
+
+// Get all users - Admin
+exports.getAllUser = catchAsyncErrors(async (req, res, next) => {
+    const users = await User.find();
+
+    res.status(200).json({
+        success: true,
+        users
+    });
+});
+
+// Get single user - Admin
+exports.getSingleUser = catchAsyncErrors(async (req, res, next) => {
+    const user = await User.findById(req.params.id);
+
+    if (!user) {
+        return next(
+            new ErrorHandler(`User does not exist with id ${req.params.id}`)
+        );
+    }
+
+    res.status(200).json({
+        success: true,
+        user
+    })
+})
