@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { RiSearch2Line } from 'react-icons/ri';
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ const Header = () => {
             "w-full bg-white text-gray-900 body-font mb-4 shadow-sm"
         >
             {/* :DESKTOP MENU */}
-            <div className="container mx-auto flex justify-between items-center py-7 px-5">
+            <div className="container mx-auto flex justify-between items-center py-5 px-5">
                 {/* ::Site logo and Name */}
                 <Link
                     to="/"
@@ -23,22 +24,26 @@ const Header = () => {
                 </Link>
                 {/* ::Navbar */}
                 <div className="flex justify-center">
-                    <nav className="hidden md:mr-auto md:border-gray-500 md:flex flex-wrap items-center justify-center text-base tracking-wide">
-                        <Link to="" className="mr-8 hover:bg-blue-50 hover:text-gray-800 p-1 rounded-sm ">
-                            Solutions
+                    <nav className="hidden md:mr-auto md:border-gray-500 md:flex flex-wrap items-center justify-around gap-5 text-base tracking-wide">
+                        <Link to="/category" className=" hover:bg-blue-50 hover:text-gray-800 p-1 rounded-sm ">
+                            Category
                         </Link>
 
-                        <Link to="/about" className="mr-8 hover:bg-blue-50 hover:text-gray-800 p-1 rounded-sm ">
+                        <Link to="/about" className=" hover:bg-blue-50 hover:text-gray-800 p-1 rounded-sm ">
                             About
                         </Link>
-                        <Link to="/about" className="mr-8 hover:bg-blue-50 hover:text-gray-800 p-1 rounded-sm ">
+                        <Link to="/contact" className=" hover:bg-blue-50 hover:text-gray-800 p-1 rounded-sm ">
                             Contact
                         </Link>
+                        <Link to="/contact" className=" hover:bg-blue-50 hover:text-gray-800 px-1 rounded-sm ">
+                            <RiSearch2Line />
+                        </Link>
+
                     </nav>
                 </div>
                 {/* ::Avatar */}
                 <div className="hidden sm:inline-flex ml-auto md:ml-0 mr-4 md:mr-0 cursor-pointer">
-                    <div>
+                    <div className="hover:bg-blue-50 hover:text-gray-800 p-1 rounded-sm ">
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
                             className='h-6 w-6'
@@ -53,7 +58,7 @@ const Header = () => {
                             />
                         </svg>
                     </div>
-                    <div className="px-4">
+                    <div className="mx-4 hover:bg-blue-50 hover:text-gray-800 p-1 rounded-sm">
                         <svg
                             className='w-6 h-6'
                             fill='none'
@@ -94,30 +99,24 @@ const Header = () => {
             {/* :MOBILE MENU */}
             {isOpen && (
                 <div className="w-full flex flex-col py-4 px-3 md:hidden bg-gray-800 text-base uppercase text-center font-semibold">
-                    <a
-                        href="#link"
+                    <Link
+                        to=""
                         className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700"
                     >
-                        Solutions
-                    </a>
-                    <a
-                        href="#link"
-                        className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700"
-                    >
-                        Prices
-                    </a>
-                    <a
-                        href="#link"
+                        Category
+                    </Link>
+                    <Link
+                        to=""
                         className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700"
                     >
                         About
-                    </a>
-                    <a
-                        href="#link"
+                    </Link>
+                    <Link
+                        to=""
                         className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700"
                     >
                         Contact
-                    </a>
+                    </Link>
                 </div>
             )}
         </nav>
