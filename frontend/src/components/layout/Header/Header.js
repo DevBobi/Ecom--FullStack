@@ -11,16 +11,37 @@ const Header = () => {
             "w-full bg-white text-gray-900 body-font mb-4 shadow-sm"
         >
             {/* :DESKTOP MENU */}
-            <div className="container mx-auto flex justify-between items-center py-5 px-5">
+            <div className="container lg:mx-auto flex justify-between items-center py-5 px-5">
+
+                {/* ::Burger icon standard */}
+                <button
+                    className="md:hidden rounded-md active:outline-none focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500"
+                    onClick={() => setIsOpen(!isOpen)}
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-8 w-8 rounded-md text-gray-300 bg-gradient-to-br from-transparent to-transparent hover:text-white hover:from-yellow-500 hover:to-red-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                </button>
                 {/* ::Site logo and Name */}
                 <Link
                     to="/"
-                    className="flex flex-shrink-0 title-font font-medium items-center text-gray-900 md:mb-0"
+                    className="flex flex-shrink-0 title-font font-medium items-center text-gray-900 md:mb-0 md:mx-0"
                 >
-                    <img src="" className="w-10 h-10" alt="" />
-                    <span className="ml-3 text-xl text-gray-900 font-semibold antialiased">
+                    {/* <img src="" className="w-10 h-10" alt="" /> */}
+                    <div className="ml-3 text-xl text-gray-900 font-semibold antialiased">
                         Ecom
-                    </span>
+                    </div>
                 </Link>
                 {/* ::Navbar */}
                 <div className="flex justify-center">
@@ -42,7 +63,7 @@ const Header = () => {
                     </nav>
                 </div>
                 {/* ::Avatar */}
-                <div className="hidden sm:inline-flex ml-auto md:ml-0 mr-4 md:mr-0 cursor-pointer">
+                <div className="gap-2 flex  cursor-pointer">
                     <div className="hover:bg-blue-50 hover:text-gray-800 p-1 rounded-sm ">
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
@@ -58,7 +79,7 @@ const Header = () => {
                             />
                         </svg>
                     </div>
-                    <div className="mx-4 hover:bg-blue-50 hover:text-gray-800 p-1 rounded-sm">
+                    <div className=" hover:bg-blue-50 hover:text-gray-800 p-1 rounded-sm">
                         <svg
                             className='w-6 h-6'
                             fill='none'
@@ -74,26 +95,7 @@ const Header = () => {
                         </svg>
                     </div>
                 </div>
-                {/* ::Burger icon standard */}
-                <button
-                    className="md:hidden rounded-md active:outline-none focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500"
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-8 w-8 rounded-md text-gray-300 bg-gradient-to-br from-transparent to-transparent hover:text-white hover:from-yellow-500 hover:to-red-500"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M4 6h16M4 12h16M4 18h16"
-                        />
-                    </svg>
-                </button>
+
             </div>
 
             {/* :MOBILE MENU */}
