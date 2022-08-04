@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <nav
             className=
-            "w-full bg-white text-gray-900 body-font mb-4 shadow-sm"
+            "w-full bg-white text-gray-900 body-font shadow-sm"
         >
             {/* :DESKTOP MENU */}
             <div className="container lg:mx-auto flex justify-between items-center py-5 px-5">
