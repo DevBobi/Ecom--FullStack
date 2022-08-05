@@ -12,11 +12,11 @@ const Banner = () => {
             <img src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" className="absolute w-full h-full object-cover object-left sm:object-center opacity-90 brightness-90" />
 
             {/* :HERO MAIN CONTAINER */}
-            <div className="relative py-26 xl:py-48 w-full md:w-2/3 lg:w-1/2 h-full flex flex-col justify-center">
+            <div className="relative py-28 xl:py-48 w-full md:w-2/3 lg:w-1/2 h-full flex flex-col justify-center">
 
                 {/* ::Hero title & text */}
-                <div className="mx-5 md:mx-0 p-8 rounded-xl md:rounded-r-none bg-gray-800 bg-opacity-50 text-white shadow-2xl">
-                    <h1 className="text-3xl sm:text-5xl font-josefin font-extrabold">Ecom, Fancy <br /><span className="text-yellow-400 text-opacity-80">Ecom</span> Website <br /></h1>
+                <div className="mx-5 md:mx-0 p-8 rounded-lg md:rounded-r-none bg-gray-800 bg-opacity-50 text-white shadow-2xl">
+                    <h1 className="text-3xl sm:text-5xl font-josefin font-bold">Ecom, Fancy <br /><span className="text-yellow-400 text-opacity-80">Ecom</span> Website <br /></h1>
                     <p className="mt-3 text-gray-100 font-firacode">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta blanditiis in asperiores optio est, id.</p>
 
 
