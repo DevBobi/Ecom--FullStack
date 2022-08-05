@@ -13,8 +13,8 @@ const product = {
 const Product = () => {
   return (
     <>
-      <div className="max-w-screen-xl px-20 py-8 mx-auto">
-        <div>
+      <div className="max-w-screen-xl  py-8 mx-auto bg-gray-100">
+        <div className='lg:px-20'>
           <span className="inline-block w-12 h-1 bg-red-700"></span>
 
           <h2 className="mt-1 text-2xl font-bold tracking-wide uppercase lg:text-3xl">
@@ -22,7 +22,8 @@ const Product = () => {
           </h2>
         </div>
 
-        <div id='container' className="grid grid-cols-2 my-8 lg:grid-cols-4 gap-x-4 gap-y-4">
+        <div id='container' className="grid grid-cols-1 my-8 lg:grid-cols-4 gap-x-4 gap-y-4 lg:px-20 sm:px-2">
+          <ProductCard product={product} />
           <ProductCard product={product} />
           <ProductCard product={product} />
           <ProductCard product={product} />

@@ -3,10 +3,10 @@ import Star from "react-rating-stars-component"
 
 const ProductCard = ({ product }) => {
     return (
-        <div className='shadow-lg border rounded-lg duration-300 hover:shadow-sm hover:scale-110'>
-            <a href={product._id} className="block">
+        <div className='shadow-lg rounded-xl duration-300 hover:shadow-md hover:scale-110'>
+            <a href={product._id} className="">
                 <div className="flex justify-start">
-                    <strong className="relative h-6 px-4 text-xs leading-6 text-white uppercase bg-black"> New </strong>
+                    <strong className="absolute h-6 px-4 text-xs leading-6 text-white uppercase bg-black"> New </strong>
                 </div>
 
                 <img
@@ -15,11 +15,11 @@ const ProductCard = ({ product }) => {
                     className="object-cover w-full h-60"
                 />
 
-                <h5 className="mt-4 px-4 text-md text-black/90">
+                <h5 className="bg-white pt-4 px-4 text-md text-black/90">
                     {product.name}
                 </h5>
 
-                <div className="flex items-center justify-between font-bold px-4 py-4">
+                <div className="flex items-center  rounded-lg justify-between font-bold px-4 py-4 bg-white">
 
                     <div>
                         <Star

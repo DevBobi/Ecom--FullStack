@@ -20,7 +20,7 @@ const Header = () => {
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-8 w-8 rounded-md text-gray-300 bg-gradient-to-br from-transparent to-transparent hover:text-white hover:from-yellow-500 hover:to-red-500"
+                        className="h-8 w-8 rounded-md text-gray-300 bg-gradient-to-br from-transparent to-transparent hover:text-white hover:from-lime hover:to-gray-400"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -100,22 +100,22 @@ const Header = () => {
 
             {/* :MOBILE MENU */}
             {isOpen && (
-                <div className="w-full flex flex-col py-4 px-3 md:hidden bg-gray-800 text-base uppercase text-center font-semibold">
+                <div className="w-full flex flex-col py-4 px-3 md:hidden bg-gray-100 text-base uppercase text-center font-semibold">
                     <Link
                         to=""
-                        className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700"
+                        className="block px-3 py-2 rounded-md text-gray-700 hover:text-white hover:bg-gray-700"
                     >
                         Category
                     </Link>
                     <Link
                         to=""
-                        className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700"
+                        className="block px-3 py-2 rounded-md text-gray-700 hover:text-white hover:bg-gray-700"
                     >
                         About
                     </Link>
                     <Link
                         to=""
-                        className="block px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-700"
+                        className="block px-3 py-2 rounded-md text-gray-700 hover:text-white hover:bg-gray-700"
                     >
                         Contact
                     </Link>
