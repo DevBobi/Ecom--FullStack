@@ -4,8 +4,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import Banner from './components/screens/Banner/Banner';
-import Home from './components/Home/Home';
+import Home from './components/Home/Home/Home';
 
 function App() {
   return (

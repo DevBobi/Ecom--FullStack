@@ -6,7 +6,11 @@ module.exports = {
     fontFamily: {
       'custom': ['PT Sans', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        'lime': '#56b280',
+      },
+    },
   },
   plugins: [],
 }

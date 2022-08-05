@@ -22,7 +22,7 @@ const Banner = () => {
 
                     {/* ::Hero button */}
                     <button className="relative m-5 w-full md:w-2/3 lg:w-2/5 inline-flex items-center text-2xl font-firacode text-white overflow-hidden transition-all duration-300 transform hover:translate-x-4">
-                        <Link to="/" className="relative -top-0.5 mr-2 text-white ">Explore</Link>
+                        <a href="#container" className="relative -top-0.5 mr-2 text-white ">Explore</a>
                         <FaArrowCircleRight />
                         {/* <img src="https://fancytailwind.com/static/53e4540ef179fe51d5a02619660a1a92/arrow1.png" alt="" /> */}
                     </button>

@@ -11,7 +11,7 @@ const Header = () => {
             "w-full bg-white text-gray-900 body-font shadow-sm"
         >
             {/* :DESKTOP MENU */}
-            <div className="container lg:mx-auto flex justify-between items-center py-5 px-5">
+            <div className="container lg:mx-auto flex justify-between items-center py-5 lg:px-20">
 
                 {/* ::Burger icon standard */}
                 <button
