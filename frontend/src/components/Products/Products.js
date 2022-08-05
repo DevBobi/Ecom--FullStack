@@ -14,7 +14,7 @@ const Product = () => {
   return (
     <>
       <div className="max-w-screen-xl  py-8 mx-auto bg-gray-100">
-        <div className='lg:px-20'>
+        <div className='lg:px-20 py-5'>
           <span className="inline-block w-12 h-1 bg-red-700"></span>
 
           <h2 className="mt-1 text-2xl font-bold tracking-wide uppercase lg:text-3xl">
