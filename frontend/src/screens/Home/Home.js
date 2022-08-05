@@ -1,7 +1,9 @@
 import React from 'react'
-import Banner from '../../screens/Banner/Banner'
-import Layout from '../../screens/Layout/Layout'
-import Product from '../Products/Products'
+import Layout from '../../components/Layout/Layout'
+import Product from '../../components/Products/Products'
+import Banner from '../Banner/Banner'
+
+
 
 const Home = () => {
     return (
