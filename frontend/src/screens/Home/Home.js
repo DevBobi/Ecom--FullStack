@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../../components/Layout/Layout';
-import Product from '../../components/Products/Products';
+import Product from '../../components/Product/Products';
 import Banner from '../Banner/Banner';
 import MetaData from '../Metadata/MetaData';
 

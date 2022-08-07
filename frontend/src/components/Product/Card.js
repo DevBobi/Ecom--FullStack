@@ -1,10 +1,11 @@
 import React from 'react'
 import Star from "react-rating-stars-component"
+import { Link } from 'react-router-dom'
 
 const Card = ({ product }) => {
     return (
         <div className='shadow-lg rounded-xl duration-300 hover:shadow-md hover:scale-110'>
-            <a href={product._id} className="">
+            <Link to={`product/${product._id}`} className="">
                 <div className="flex justify-start">
                     <strong className="absolute h-6 px-4 text-xs leading-6 text-white uppercase bg-black"> New </strong>
                 </div>
@@ -29,15 +30,15 @@ const Card = ({ product }) => {
                             emptyStarColor='#242423'
                             editing={false}
                         />
-                        <span className='text-sm font-light py-1'>
-                            ({product.numOfReviews} Reviews)
+                        <span className='ml-2 py-1 text-sm text-sky-400 font-medium tracking-wide hover:text-sky-500 hover:underline'>
+                            ({product.numOfReviews})
                         </span>
                     </div>
                     <p className="text-lg text-lime">
-                        {`${product.price}`}
+                        {`$${product.price}`}
                     </p>
                 </div>
-            </a>
+            </Link>
         </div>
     )
 }
