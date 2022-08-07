@@ -14,15 +14,15 @@ const Product = () => {
 
   useEffect(() => {
     if (error) {
-      return alert.error(error);
-      dispatch(clearErrors());
+      alert.error(error);
+      dispatch(clearErrors())
     }
     dispatch(getProduct());
   }, [dispatch, error, alert]);
 
   return (
-    <>
-      <div id='container' className="max-w-screen-xl  py-6 mx-auto bg-gray-100">
+    <div className='bg-gray-100'>
+      <div id='container' className="max-w-screen-xl  py-6 mx-auto">
         <div className='lg:px-20 mx:px-10 pt-2 pb-2'>
           <span className="inline-block w-12 h-1 bg-red-700"></span>
 
@@ -36,12 +36,12 @@ const Product = () => {
           </div>
           :
           <div className="grid grid-cols-1 my-8 lg:grid-cols-4 md:grid-cols-3 md:px-5 gap-x-4 gap-y-4 lg:px-20 sm:px-2">
-            {products && products.map(product => (
-              <Card product={product} />
+            {products && products.map((product, i) => (
+              <Card product={product} key={i} />
             ))}
           </div>}
       </div>
-    </>
+    </div>
   )
 }
 

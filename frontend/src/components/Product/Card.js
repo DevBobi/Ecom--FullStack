@@ -34,7 +34,7 @@ const Card = ({ product }) => {
                             ({product.numOfReviews})
                         </span>
                     </div>
-                    <p className="text-lg text-lime">
+                    <p className="m-1 text-lg text-gray-500 font-extrabold">
                         {`$${product.price}`}
                     </p>
                 </div>
