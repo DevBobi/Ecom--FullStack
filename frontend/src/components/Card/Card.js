@@ -21,17 +21,20 @@ const Card = ({ product }) => {
 
                 <div className="flex items-center  rounded-lg justify-between font-bold px-4 py-4 bg-white">
 
-                    <div>
+                    <div className='flex'>
                         <Star
                             name='rate'
-                            value={product.rating}
+                            value={product.ratings}
                             starColor='#56b280'
                             emptyStarColor='#242423'
                             editing={false}
                         />
+                        <span className='text-sm font-light py-1'>
+                            ({product.numOfReviews} Reviews)
+                        </span>
                     </div>
                     <p className="text-lg text-lime">
-                        {product.price}
+                        {`${product.price}`}
                     </p>
                 </div>
             </a>
