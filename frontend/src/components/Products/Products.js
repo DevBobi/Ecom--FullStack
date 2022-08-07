@@ -1,5 +1,7 @@
-import React from 'react'
-import ProductCard from '../ProductCard/ProductCard'
+import React, { useEffect } from 'react';
+import Card from '../Card/Card';
+import { getProduct } from '../../actions/productAction';
+import { useSelector, useDispatch } from 'react-redux';
 
 const product = {
   name: "  Limited Edition Sports Trainer",
@@ -11,6 +13,12 @@ const product = {
 }
 
 const Product = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getProduct())
+  }, [dispatch])
+
   return (
     <>
       <div id='container' className="max-w-screen-xl  py-6 mx-auto bg-gray-100">
@@ -23,14 +31,14 @@ const Product = () => {
         </div>
 
         <div className="grid grid-cols-1 my-8 lg:grid-cols-4 gap-x-4 gap-y-4 lg:px-20 sm:px-2">
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
-          <ProductCard product={product} />
+          <Card product={product} />
+          <Card product={product} />
+          <Card product={product} />
+          <Card product={product} />
+          <Card product={product} />
+          <Card product={product} />
+          <Card product={product} />
+          <Card product={product} />
         </div>
       </div>
     </>

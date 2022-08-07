@@ -1,7 +1,7 @@
 import React from 'react'
 import Star from "react-rating-stars-component"
 
-const ProductCard = ({ product }) => {
+const Card = ({ product }) => {
     return (
         <div className='shadow-lg rounded-xl duration-300 hover:shadow-md hover:scale-110'>
             <a href={product._id} className="">
@@ -39,4 +39,4 @@ const ProductCard = ({ product }) => {
     )
 }
 
-export default ProductCard
+export default Card
