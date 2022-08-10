@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import { getProductDetails } from '../../actions/productAction';
 import ReviewCard from './ReviewCard';
 
-const ProductDetailsScreen = ({ props }) => {
+const ProductDetails = ({ props }) => {
     const dispatch = useDispatch();
     const { id } = useParams();
     const [count, setCount] = useState(1);
@@ -159,4 +159,4 @@ const ProductDetailsScreen = ({ props }) => {
     )
 }
 
-export default ProductDetailsScreen
+export default ProductDetails

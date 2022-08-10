@@ -4,7 +4,6 @@ import Star from 'react-rating-stars-component'
 
 
 const ReviewCard = ({ review }) => {
-    console.log(review)
 
     const reviews = [
         {
