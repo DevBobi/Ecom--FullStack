@@ -7,8 +7,7 @@ const Header = () => {
 
     return (
         <nav
-            className=
-            "w-full bg-white text-gray-900 body-font shadow-sm"
+            className="w-full fixed top-0 z-50 bg-white text-gray-900 body-font shadow-sm"
         >
             {/* :DESKTOP MENU */}
             <div className="container lg:mx-auto flex justify-between items-center py-5 lg:px-20">
@@ -56,7 +55,7 @@ const Header = () => {
                         <Link to="/contact" className=" hover:bg-blue-50 hover:text-gray-800 p-1 rounded-sm ">
                             Contact
                         </Link>
-                        <Link to="/contact" className=" hover:bg-blue-50 hover:text-gray-800 px-1 rounded-sm ">
+                        <Link to="/search" className=" hover:bg-blue-50 hover:text-gray-800 px-1 rounded-sm ">
                             <RiSearch2Line />
                         </Link>
 

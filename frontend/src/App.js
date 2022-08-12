@@ -7,6 +7,8 @@ import {
 import Home from './screens/Home/Home';
 import Layout from './components/Layout/Layout';
 import ProductDetails from './components/Product/ProductDetails';
+import Products from './components/Product/Products';
+import Search from './components/Product/Search';
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
       </Layout>
 

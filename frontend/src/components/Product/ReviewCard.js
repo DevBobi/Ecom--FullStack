@@ -5,34 +5,17 @@ import Star from 'react-rating-stars-component'
 
 const ReviewCard = ({ review }) => {
 
-    const reviews = [
-        {
-            id: 1,
-            author: "Alenor Pompy",
-            postDate: "March, 15, 2022",
-            review: "In rem ex sint numquam dolorum nobis officiis voluptatibus fugiat possimus non! Quasi molestias tempora deserunt laudantium voluptatum neque impedit, quae earum?",
-            rating: 4,
-            picture: "https://fancytailwind.com/static/profile3-7d5e2246807e801f5e5037c1234fc121.jpg",
-        },
-    ]
-
     return (
         <div className="mx-auto py-8 px-4 w-full max-w-7xl bg-white">
-            <div className="mx-auto max-w-4xl flex flex-col">
-
-                {/* :HEADER */}
-                <div className="pb-5 w-full flex justify-center border-b-2 border-gray-200">
-                    <h3 className="text-xl sm:text-2xl text-gray-700 font-bold">Reviews</h3>
-                </div>
-
+            <div className="mx-auto max-w-5xl flex flex-col">
 
                 {/* :REVIEWS */}
                 <div className="mt-5">
-                    {reviews.map((review, index) => (
-                        <article key={review.id} className={`py-5 flex items-start ${index !== 0 && "border-t-2 border-gray-100"}`}>
+                    {review &&
+                        <article className={`py-5 flex items-start ${review !== 0 && "border-t-2 border-gray-100"}`}>
                             {/* ::Avatar */}
                             <span className="flex-shrink-0 inline-block border-2 border-gray-50 rounded-full overflow-hidden" aria-label="avatar">
-                                <img src={review.picture} alt="" className="w-12 h-12" />
+                                <img src="https://fancytailwind.com/static/profile3-7d5e2246807e801f5e5037c1234fc121.jpg" alt="" className="w-12 h-12" />
                             </span>
                             {/* ::Review Content */}
                             <div className="ml-3">
@@ -47,10 +30,10 @@ const ReviewCard = ({ review }) => {
                                 {/* :::title */}
                                 <p className="text-base text-gray-700 font-semibold">{review.title}</p>
                                 {/* :::text */}
-                                <p className="text-base text-gray-500 font-medium">{review.review}</p>
+                                <p className="text-base text-gray-500 font-medium">{review.comment}</p>
                             </div>
                         </article>
-                    ))
+
                     }
                 </div>
 
