@@ -9,9 +9,6 @@ import {
     PRODUCT_DETAILS_SUCCESS,
     CLEAR_ERRORS,
     CLEAR_CATEGORY,
-    PRODUCT_CATEGORY_REQUEST,
-    PRODUCT_CATEGORY_SUCCESS,
-    PRODUCT_CATEGORY_FAIL
 } from '../constants/productConstants';
 
 
@@ -57,20 +54,7 @@ export const getProductDetails = (id) => async (dispatch) => {
     }
 };
 
-export const searchProducts = (keywords) => async (dispatch) => {
-    try {
-        dispatch({ type: PRODUCT_CATEGORY_REQUEST });
-        let link = `/api/v1/products?keyword=${keywords}`
-        const { data } = await axios.get(link)
-        dispatch({ type: PRODUCT_CATEGORY_SUCCESS, payload: data });
-    } catch (error) {
-        dispatch({
-            type: PRODUCT_CATEGORY_FAIL,
-            payload: error.response.data.message
-        });
-    }
-};
-
+// Clear 
 export const clearCategory = () => {
     return { type: CLEAR_CATEGORY };
 };

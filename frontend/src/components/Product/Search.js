@@ -1,20 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { clearCategory, getProduct } from '../../actions/productAction';
+import SearchedProducts from './SearchedProducts';
 
-const Search = ({ history }) => {
+const Search = () => {
     const [keyword, setKeyword] = useState("");
+    const dispatch = useDispatch();
+    const { products, loading, error } = useSelector((state) => state.products);
 
     const searchSubmitHandler = (e) => {
         e.preventDefault();
-        if (keyword.trim()) {
-            history.push(`/products/${keyword}`);
-        } else {
-            history.push("/products");
-        }
+        dispatch(getProduct(keyword))
     };
+    useEffect(() => {
+        let time;
+        if (keyword)
+            time = setTimeout(() => dispatch(getProduct(keyword)), 600);
+        return () => {
+            clearTimeout(time);
+            dispatch(clearCategory());
+        };
+    }, [dispatch, keyword]);
 
     return (
         <div className='bg-gray-100'>
-            <div className='pt-64 pb-52 '>
+            <div className='py-24 '>
                 <form
                     onSubmit={searchSubmitHandler}
                     className="flex justify-center items-center w-full flex-1"
@@ -32,6 +42,22 @@ const Search = ({ history }) => {
                         Search
                     </button>
                 </form>
+                {
+                    products?.length > 0 ? (
+                        <SearchedProducts products={products} title={keyword} loading={loading} />
+                    )
+                        : loading ? (
+                            <div className='loader'></div>
+                        ) : !keyword ? (
+                            <h2 className="py-32 text-3xl text-center text-gray-700 w-full px-10">
+                                Type something to search
+                            </h2>
+                        ) : !products.length > 0 && (
+                            <h2 className="py-32 text-3xl text-center text-gray-700 w-full px-10">
+                                there is no Product with{' '}
+                                <span className="text-red-500">{keyword}</span>
+                            </h2>
+                        )}
             </div>
         </div>
     )

@@ -4,7 +4,7 @@ import { getProduct } from '../../actions/productAction';
 import Loader from '../Loader/Loader';
 import Card from './Card';
 
-const Products = ({ match }) => {
+const Products = () => {
     const dispatch = useDispatch();
     const { products, loading, error, productsCount } = useSelector((state) => state.products);
 
