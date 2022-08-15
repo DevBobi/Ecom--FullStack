@@ -1,5 +1,5 @@
 import React from 'react'
-import Product from '../../components/Product/ProductCard';
+import Product from '../../components/Product/Products';
 import Banner from '../Banner/Banner';
 import MetaData from '../Metadata/MetaData';
 

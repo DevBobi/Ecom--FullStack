@@ -26,15 +26,15 @@ const Card = ({ product }) => {
                         <Star
                             name='rate'
                             value={product.ratings}
-                            starColor='#56b280'
-                            emptyStarColor='#242423'
-                            editing={false}
+                            edit={false}
+
                         />
                         <span className='ml-2 py-1 text-sm text-sky-400 font-medium tracking-wide hover:text-sky-500 hover:underline'>
                             ({product.numOfReviews})
                         </span>
                     </div>
-                    <p className="m-1 text-lg text-gray-500 font-extrabold">
+                    <p className="m-1 text-lg text-gray-500 font-semibold
+                    ">
                         {`$${product.price}`}
                     </p>
                 </div>

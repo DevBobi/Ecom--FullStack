@@ -38,7 +38,7 @@ const Header = () => {
                     className="flex flex-shrink-0 title-font font-medium items-center text-gray-900 md:mb-0 md:mx-0"
                 >
                     {/* <img src="" className="w-10 h-10" alt="" /> */}
-                    <div className="ml-3 text-2xl text-lime font-bold antialiased">
+                    <div className="text-2xl text-lime font-bold antialiased">
                         ECOM
                     </div>
                 </Link>

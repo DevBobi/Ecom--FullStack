@@ -1,23 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Search = () => {
+const Search = ({ history }) => {
+    const [keyword, setKeyword] = useState("");
+
+    const searchSubmitHandler = (e) => {
+        e.preventDefault();
+        if (keyword.trim()) {
+            history.push(`/products/${keyword}`);
+        } else {
+            history.push("/products");
+        }
+    };
+
     return (
-        <div className='m-48 py-10'>
-            <form onSubmit="" className="flex justify-center items-center w-full flex-1">
-                <input
-
-                    value=""
-                    type='text'
-                    className="p-4 px-7 my-4 outline-none rounded-full ml-14 border border-lime"
-                    placeholder='Search products...'
-                />
-                <button
-                    type='submit'
-                    className="text-4xl relative right-24 mb-2"
+        <div className='bg-gray-100'>
+            <div className='pt-64 pb-52 '>
+                <form
+                    onSubmit={searchSubmitHandler}
+                    className="flex justify-center items-center w-full flex-1"
                 >
-                    <span className='text-xl font-semibold text-lime'> Search</span>
-                </button>
-            </form>
+                    <input
+                        type="text"
+                        placeholder="Search a Product ..."
+                        onChange={(e) => setKeyword(e.target.value)}
+                        className="p-4 px-7 my-4 outline-none rounded-full ml-14 border border-lime"
+                    />
+                    <button
+                        type='submit'
+                        className="relative text-xl font-semibold text-lime right-24 mb-2"
+                    >
+                        Search
+                    </button>
+                </form>
+            </div>
         </div>
     )
 }

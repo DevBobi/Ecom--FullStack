@@ -1,9 +1,19 @@
 
+import { Rating } from '@material-ui/lab';
 import React from 'react'
 import Star from 'react-rating-stars-component'
 
 
 const ReviewCard = ({ review }) => {
+    console.log(review)
+
+    const options = {
+        size: "small",
+        value: review.rating,
+        readOnly: true,
+        edit: false,
+        precision: 0.5,
+    };
 
     return (
         <div className="mx-auto py-8 px-4 w-full max-w-7xl bg-white">
@@ -25,7 +35,7 @@ const ReviewCard = ({ review }) => {
                                 <p className="mt-1 text-xs text-gray-400 font-medium">March, 15, 2022</p>
                                 {/* :::rating */}
                                 <div className="my-4">
-                                    <Star rating={review.rating} color="text-yellow-500" />
+                                    <Star {...options} />
                                 </div>
                                 {/* :::title */}
                                 <p className="text-base text-gray-700 font-semibold">{review.title}</p>

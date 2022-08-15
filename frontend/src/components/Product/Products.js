@@ -4,13 +4,13 @@ import { getProduct } from '../../actions/productAction';
 import Loader from '../Loader/Loader';
 import Card from './Card';
 
-const Products = () => {
+const Products = ({ match }) => {
     const dispatch = useDispatch();
     const { products, loading, error, productsCount } = useSelector((state) => state.products);
 
     useEffect(() => {
         dispatch(getProduct());
-    }, [dispatch])
+    }, [dispatch,]);
 
     return (
         <>

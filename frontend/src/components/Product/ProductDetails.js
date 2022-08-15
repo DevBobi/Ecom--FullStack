@@ -6,7 +6,8 @@ import { useParams } from 'react-router-dom';
 import { clearErrors, getProductDetails } from '../../actions/productAction';
 import Loader from '../Loader/Loader';
 import ReviewCard from './ReviewCard';
-import { useAlert } from "react-alert"
+import { useAlert } from "react-alert";
+import { Rating } from "@material-ui/lab";
 
 const ProductDetails = ({ props }) => {
     const alert = useAlert()
@@ -17,6 +18,12 @@ const ProductDetails = ({ props }) => {
     const { product, loading, error } = useSelector(
         (state) => state.productDetails
     );
+    const options = {
+        size: "small",
+        value: product.ratings,
+        readOnly: true,
+        precision: 0.5,
+    };
 
     useEffect(() => {
         if (error) {
@@ -46,12 +53,7 @@ const ProductDetails = ({ props }) => {
 
                                             {/* :PICTURES CONTAINER */}
                                             <div className="py-8 w-full lg:w-1/2 flex flex-col items-center">
-                                                {/* ::Like Button */}
-                                                {/* <span className="self-start ml-5">
-                            <button className="text-gray-300 hover:text-red-500">
-                                <HeartIcon className="w-10 h-10" />
-                            </button>
-                        </span> */}
+
                                                 {/* ::Main Picture */}
                                                 <div className="w-auto h-56 sm:h-72 lg:h-full max-h-96 overflow-hidden">
                                                     <img src={item.url} alt={item.url} className="object-contain w-full h-full" />
@@ -73,8 +75,6 @@ const ProductDetails = ({ props }) => {
                                 </div> */}
                                             </div>
 
-
-
                                             {/* :PRODUCT DETAILS */}
                                             <div className="lg:py-8 w-full lg:w-1/2 flex flex-col lg:border-l-2 border-gray-200">
 
@@ -93,14 +93,7 @@ const ProductDetails = ({ props }) => {
                                                         <div className="items-center space-x-1">
 
                                                             <div>
-                                                                <Star
-                                                                    name='rate'
-                                                                    value={product.ratings}
-                                                                    color="text-yellow-500"
-                                                                    editing={false}
-                                                                    size={20}
-                                                                    half={true}
-                                                                />
+                                                                <Rating {...options} />
                                                             </div>
                                                             <p >
                                                                 <span className='text-gray-500 font-semibold'>
