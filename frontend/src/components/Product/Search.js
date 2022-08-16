@@ -43,7 +43,7 @@ const Search = () => {
                     </button>
                 </form>
                 {
-                    products?.length > 0 ? (
+                    products?.length > 0 && keyword ? (
                         <SearchedProducts products={products} title={keyword} loading={loading} />
                     )
                         : loading ? (

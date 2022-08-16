@@ -1,16 +1,29 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProduct } from '../../actions/productAction';
 import Loader from '../Loader/Loader';
 import Card from './Card';
+import Pagination from "react-js-pagination";
+import "./Products.css";
 
 const Products = () => {
     const dispatch = useDispatch();
-    const { products, loading, error, productsCount } = useSelector((state) => state.products);
+    const [currentPage, setCurrentPage] = useState(1);
+    const {
+        products,
+        loading,
+        error,
+        resultPerPage,
+        productsCount
+    } = useSelector((state) => state.products);
+
+    const setCurrentPageNo = (e) => {
+        setCurrentPage(e);
+    };
 
     useEffect(() => {
         dispatch(getProduct());
-    }, [dispatch,]);
+    }, [dispatch, currentPage]);
 
     return (
         <>
@@ -38,7 +51,26 @@ const Products = () => {
                                         <Card product={product} key={i} />
                                     ))}
                                 </div>}
+
+                            <div className="paginationBox">
+                                <Pagination
+                                    activePage={currentPage}
+                                    itemsCountPerPage={resultPerPage}
+                                    totalItemsCount={productsCount}
+                                    onChange={setCurrentPageNo}
+                                    nextPageText="Next"
+                                    prevPageText="Prev"
+                                    firstPageText="1st"
+                                    lastPageText="Last"
+                                    itemClass="page-item"
+                                    linkClass="page-link"
+                                    activeClass="pageItemActive"
+                                    activeLinkClass="pageLinkActive"
+                                />
+                            </div>
+
                         </div>
+
                     </div>
             }
         </>

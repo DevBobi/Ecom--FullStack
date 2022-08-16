@@ -17,10 +17,11 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
           {/* <Route path="/product/:keyword" element={<Products />} /> */}
           <Route path="/search" element={<Search />} />
+          <Route path="/search/product/:id" element={<ProductDetails />} />
         </Routes>
       </Layout>
 
