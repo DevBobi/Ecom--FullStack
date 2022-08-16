@@ -1,11 +1,9 @@
 
-import { Rating } from '@material-ui/lab';
 import React from 'react'
 import Star from 'react-rating-stars-component'
 
 
 const ReviewCard = ({ review }) => {
-    console.log(review)
 
     const options = {
         size: "small",

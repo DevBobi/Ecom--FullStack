@@ -9,6 +9,8 @@ import Layout from './components/Layout/Layout';
 import ProductDetails from './components/Product/ProductDetails';
 import Products from './components/Product/Products';
 import Search from './components/Product/Search';
+import About from './screens/About/About';
+import Contact from './screens/Contact/Contact';
 
 
 function App() {
@@ -18,9 +20,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/product/:id" element={<ProductDetails />} />
-          {/* <Route path="/product/:keyword" element={<Products />} /> */}
           <Route path="/search" element={<Search />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/search/product/:id" element={<ProductDetails />} />
         </Routes>
       </Layout>

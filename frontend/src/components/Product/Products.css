@@ -1,7 +1,7 @@
 .paginationBox {
     display: flex;
     justify-content: center;
-    margin: 6vmax;
+    margin: 5vmax;
 }
 
 .pagination {
@@ -29,7 +29,7 @@
 
 .page-link {
     text-decoration: none;
-    font: 300 0.7vmax "Roboto";
+    font: 300 0.7vmax "PT Sans";
     color: rgb(80, 80, 80);
     transition: all 0.3s;
 }

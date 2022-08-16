@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProduct } from '../../actions/productAction';
+import { clearErrors, getProduct } from '../../actions/productAction';
 import Loader from '../Loader/Loader';
 import Card from './Card';
 import Pagination from "react-js-pagination";
@@ -15,15 +15,20 @@ const Products = () => {
         error,
         resultPerPage,
         productsCount
-    } = useSelector((state) => state.products);
+    } = useSelector((state) => state?.products);
 
     const setCurrentPageNo = (e) => {
         setCurrentPage(e);
     };
 
     useEffect(() => {
+        if (error) {
+            alert.error(error);
+            dispatch(clearErrors());
+        }
         dispatch(getProduct());
-    }, [dispatch, currentPage]);
+    }, [dispatch, currentPage, error]);
+    console.log(products)
 
     return (
         <>
@@ -48,10 +53,13 @@ const Products = () => {
                                 :
                                 <div className="grid grid-cols-1 my-8 lg:grid-cols-4 md:grid-cols-3 md:px-5 gap-x-4 gap-y-4 lg:px-20 sm:px-2">
                                     {products && products.map((product, i) => (
-                                        <Card product={product} key={i} />
+                                        <Card product={product} key={product._id} />
                                     ))}
                                 </div>}
 
+
+                        </div>
+                        {resultPerPage < productsCount && (
                             <div className="paginationBox">
                                 <Pagination
                                     activePage={currentPage}
@@ -68,8 +76,7 @@ const Products = () => {
                                     activeLinkClass="pageLinkActive"
                                 />
                             </div>
-
-                        </div>
+                        )}
 
                     </div>
             }

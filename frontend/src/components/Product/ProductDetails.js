@@ -49,7 +49,7 @@ const ProductDetails = ({ props }) => {
                                     product.images &&
                                     product.images.map((item, i) => (
 
-                                        <div key={i} className="flex flex-col lg:flex-row px-5">
+                                        <div key={item._id} className="flex flex-col lg:flex-row px-5">
 
                                             {/* :PICTURES CONTAINER */}
                                             <div className="py-8 w-full lg:w-1/2 flex flex-col items-center">
