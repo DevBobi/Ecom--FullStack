@@ -13,27 +13,31 @@ import {
 
 
 // Get All Products
-export const getProduct =
-    (keyword = "", currentPage = 1) =>
-        async (dispatch) => {
-            try {
-                dispatch({ type: ALL_PRODUCT_REQUEST });
+export const getProduct = (params) => {
 
-                let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}`;
+    const searchParams = new URLSearchParams();
+    Object.keys(params).forEach(key => searchParams.append(key, params[key]));
 
-                const { data } = await axios.get(link);
+    return async (dispatch) => {
+        try {
+            dispatch({ type: ALL_PRODUCT_REQUEST });
 
-                dispatch({
-                    type: ALL_PRODUCT_SUCCESS,
-                    payload: data,
-                });
-            } catch (error) {
-                dispatch({
-                    type: ALL_PRODUCT_FAIL,
-                    payload: error.response.data.message,
-                });
-            }
-        };
+            let link = `/api/v1/products?${searchParams}`;
+
+            const { data } = await axios.get(link);
+
+            dispatch({
+                type: ALL_PRODUCT_SUCCESS,
+                payload: data,
+            });
+        } catch (error) {
+            dispatch({
+                type: ALL_PRODUCT_FAIL,
+                payload: error.response.data.message,
+            });
+        }
+    };
+}
 
 // Get Products Details
 export const getProductDetails = (id) => async (dispatch) => {

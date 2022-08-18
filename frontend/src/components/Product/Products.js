@@ -8,27 +8,26 @@ import "./Products.css";
 
 const Products = () => {
     const dispatch = useDispatch();
-    const [currentPage, setCurrentPage] = useState(1);
     const {
         products,
         loading,
         error,
         resultPerPage,
-        productsCount
-    } = useSelector((state) => state?.products);
+        productsCount,
+        page
+    } = useSelector((state) => state.products);
 
-    const setCurrentPageNo = (e) => {
-        setCurrentPage(e);
-    };
+    const paginationHandler = (page) => {
+        dispatch(getProduct({ page }))
+    }
 
     useEffect(() => {
         if (error) {
             alert.error(error);
             dispatch(clearErrors());
         }
-        dispatch(getProduct());
-    }, [dispatch, currentPage, error]);
-    console.log(products)
+        dispatch(getProduct({}));
+    }, [dispatch, error]);
 
     return (
         <>
@@ -59,17 +58,17 @@ const Products = () => {
 
 
                         </div>
-                        {resultPerPage < productsCount && (
+                        {resultPerPage && (
                             <div className="paginationBox">
                                 <Pagination
-                                    activePage={currentPage}
+                                    activePage={parseInt(page) || 1}
                                     itemsCountPerPage={resultPerPage}
                                     totalItemsCount={productsCount}
-                                    onChange={setCurrentPageNo}
+                                    onChange={(e) => paginationHandler(e)}
                                     nextPageText="Next"
                                     prevPageText="Prev"
                                     firstPageText="1st"
-                                    lastPageText="Last"
+                                    lastPageText="last"
                                     itemClass="page-item"
                                     linkClass="page-link"
                                     activeClass="pageItemActive"

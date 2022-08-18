@@ -10,12 +10,12 @@ const Search = () => {
 
     const searchSubmitHandler = (e) => {
         e.preventDefault();
-        dispatch(getProduct(keyword))
+        dispatch(getProduct({ keyword }))
     };
     useEffect(() => {
         let time;
         if (keyword)
-            time = setTimeout(() => dispatch(getProduct(keyword)), 600);
+            time = setTimeout(() => dispatch(getProduct({ keyword })), 600);
         return () => {
             clearTimeout(time);
             dispatch(clearCategory());
