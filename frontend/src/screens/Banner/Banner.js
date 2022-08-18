@@ -5,7 +5,7 @@ import { FaArrowCircleRight } from 'react-icons/fa';
 
 const Banner = () => {
     return (
-        <div className="relative w-full h-full flex justify-center bg-gradient-to-t from-black via-transparent to-gray-900 overflow-hidden">
+        <div className="relative pt-10 w-full h-full flex justify-center bg-gradient-to-t from-black via-transparent to-gray-900 overflow-hidden">
 
             {/* :HERO IMAGE */}
             <img src="https://images.unsplash.com/photo-1522204523234-8729aa6e3d5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="" className="absolute w-full h-full object-cover object-left sm:object-center opacity-90 brightness-90" />

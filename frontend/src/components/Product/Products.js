@@ -38,9 +38,8 @@ const Products = () => {
                     </div>
                     :
                     <div className='bg-gray-100 py-10'>
-                        <div id='container' className="max-w-screen-xl  py-10 mx-auto">
-                            <div className='lg:px-20 mx:px-10 pt-2 pb-2'>
-
+                        <div id='container' className="max-w-screen-xl py-10 mx-auto">
+                            <div className='lg:px-20 mx:px-10'>
                                 <h2 className="py-3 text-2xl font-bold tracking-wide uppercase lg:text-3xl">
                                     Products
                                 </h2>
@@ -50,9 +49,9 @@ const Products = () => {
                                     <Loader />
                                 </div>
                                 :
-                                <div className="grid grid-cols-1 my-8 lg:grid-cols-4 md:grid-cols-3 md:px-5 gap-x-4 gap-y-4 lg:px-20 sm:px-2">
+                                <div className="grid grid-cols-1 my-5 lg:grid-cols-4 md:grid-cols-3 md:px-5 gap-x-4 gap-y-4 lg:px-20 sm:px-2">
                                     {products && products.map((product, i) => (
-                                        <Card product={product} key={product._id} />
+                                        <Card product={product} key={i} />
                                     ))}
                                 </div>}
 
