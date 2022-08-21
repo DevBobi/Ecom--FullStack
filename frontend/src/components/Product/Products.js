@@ -37,7 +37,7 @@ const Products = () => {
                         <Loader />
                     </div>
                     :
-                    <div className='bg-gray-100 py-10'>
+                    <div className='bg-gray-100 pb-10'>
                         <div id='container' className="max-w-screen-xl py-10 mx-auto">
                             <div className='lg:px-20 mx:px-10'>
                                 <h2 className="py-3 text-2xl font-bold tracking-wide uppercase lg:text-3xl">

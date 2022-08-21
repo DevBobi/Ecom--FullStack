@@ -11,6 +11,7 @@ import Products from './components/Product/Products';
 import Search from './components/Product/Search';
 import About from './screens/About/About';
 import Contact from './screens/Contact/Contact';
+import NotFound from './screens/404/NotFound';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/search/product/:id" element={<ProductDetails />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
 

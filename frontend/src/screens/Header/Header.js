@@ -43,7 +43,7 @@ const Header = () => {
                     </div>
                 </Link>
                 {/* ::Navbar */}
-                <div className="flex justify-center">
+                <div className="flex justify-centern mx-auto">
                     <nav className="hidden md:mr-auto md:border-gray-500 md:flex flex-wrap items-center justify-around gap-5 text-base tracking-wide">
                         <Link to="/category" className=" hover:bg-blue-50 hover:text-gray-800 p-1 rounded-sm ">
                             Category
