@@ -6,8 +6,8 @@ const SearchedProducts = ({ products, title, loading }) => {
 
     return (
         <>
-            <h1 className="text-3xl text-center mt-20 text-gray-700" id='products'>
-                Result found with <span className='text-lime text-4xl'> "{title}"</span>
+            <h1 className="text-2xl font-medium py-5 text-center text-gray-700 w-full px-10" id='products'>
+                Result found with <span className='text-lime text-2xl'> "{title}"</span>
             </h1>
 
             {loading && !products?.length > 0 && (

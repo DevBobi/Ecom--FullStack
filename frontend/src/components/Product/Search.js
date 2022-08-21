@@ -23,8 +23,8 @@ const Search = () => {
     }, [dispatch, keyword]);
 
     return (
-        <div className='bg-gray-100'>
-            <div className='py-24 '>
+        <div className='bg-gray-100 py-36'>
+            <div className=' pb-10 '>
                 <form
                     onSubmit={searchSubmitHandler}
                     className="flex justify-center items-center w-full flex-1"
@@ -49,13 +49,13 @@ const Search = () => {
                         : loading ? (
                             <div className='loader'></div>
                         ) : !keyword ? (
-                            <h2 className="py-32 text-3xl text-center text-gray-700 w-full px-10">
-                                Type something to search
+                            <h2 className="text-2xl font-medium py-5 text-center text-gray-700 w-full px-10">
+                                Search Products..
                             </h2>
                         ) : !products.length > 0 && (
-                            <h2 className="py-32 text-3xl text-center text-gray-700 w-full px-10">
-                                there is no Product with{' '}
-                                <span className="text-red-500">{keyword}</span>
+                            <h2 className="text-2xl font-medium py-5 text-center text-gray-700 w-full px-10">
+                                There is no Product with{' '}
+                                <span className="text-red-500">"{keyword}"</span>
                             </h2>
                         )}
             </div>
