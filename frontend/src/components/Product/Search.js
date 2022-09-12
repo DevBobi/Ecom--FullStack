@@ -19,11 +19,12 @@ const Search = () => {
         return () => {
             clearTimeout(time);
             dispatch(clearCategory());
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
     }, [dispatch, keyword]);
 
     return (
-        <div className='bg-gray-100 py-36'>
+        <div className='bg-gray-200 py-36'>
             <div className=' pb-10 '>
                 <form
                     onSubmit={searchSubmitHandler}

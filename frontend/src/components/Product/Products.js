@@ -57,7 +57,7 @@ const Products = () => {
 
 
                         </div>
-                        {resultPerPage && (
+                        {resultPerPage < productsCount && (
                             <div className="paginationBox">
                                 <Pagination
                                     activePage={parseInt(page) || 1}

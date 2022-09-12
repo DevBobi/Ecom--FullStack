@@ -12,6 +12,7 @@ import Search from './components/Product/Search';
 import About from './screens/About/About';
 import Contact from './screens/Contact/Contact';
 import NotFound from './screens/404/NotFound';
+import ProductDashboard from './components/ProductDashboard/ProductDashboard';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/playground" element={<ProductDashboard />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/search/product/:id" element={<ProductDetails />} />
           <Route path="*" element={<NotFound />} />
